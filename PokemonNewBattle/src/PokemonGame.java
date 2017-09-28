@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class PokemonGame
@@ -12,6 +13,7 @@ public class PokemonGame
 				levelUp();
 				Evolution();
 				pokemonMaker();
+				attackSystem();
 				
 				
 
@@ -20,6 +22,39 @@ public class PokemonGame
 		
 
 	
+
+		private static void attackSystem()
+		{
+			int randomNumber = (int)(Math.random()*10)+1;
+			switch(randomNumber)
+			{
+				case 1:
+					{
+						
+					}
+				case 2:
+				case 3:
+				case 4:
+				case 5:
+				case 6:
+				case 7:
+				case 8:
+				case 9:
+					{
+						
+					}
+				case 10:
+					{
+						
+					}
+					
+			}
+			
+		}
+
+
+
+
 
 		private static void checkStatus()
 			{
@@ -40,10 +75,6 @@ public class PokemonGame
 					}
 				
 			}
-
-
-
-
 
 		private static void Chooser()
 			{
@@ -80,10 +111,6 @@ public class PokemonGame
 					}
 				
 			}
-
-
-
-
 
 		private static void theStart()
 			{
@@ -134,13 +161,36 @@ public class PokemonGame
 
 		private static void Evolution()
 			{
-				// TODO Auto-generated method stub
+				
 				
 			}
 		
 		private static void pokemonMaker()
 			{
-				// TODO Auto-generated method stub
+				System.out.println("......");
+				System.out.println("......");
+				System.out.println("......");
+				System.out.println("......");
+				System.out.println("......");
+				int randomNumber = (int)(Math.random()*3);
+				int randomNumber1 = randomNumber*3;
+				int randomNumber2 = randomNumber*3+1;
+				int randomNumber3 = randomNumber*3+2;
+				if(myPokemon.get(0).getLevel()<17)
+				{
+					System.out.println("the wild " + PokemonVersion.dictionary.get(randomNumber1).getName() + " jumps out, time to fight");
+					int wildPokemonLevel = myPokemon.get(0).getLevel()-2;
+					System.out.println();
+					System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName());
+					System.out.println("level: " + wildPokemonLevel);
+					int wildPokemonHP = myPokemon.get(0).getHealthPoint()-40;
+					System.out.println("HP: " + wildPokemonHP);
+					
+				}
+				
+				
+				
+				
 				
 			}
 

@@ -2,7 +2,7 @@
 public class Pokemon
 	{
 		private String name;
-		private String number;
+		private int number;
 		private String type;
 		private String skill1;
 		private int Skill1Power;
@@ -18,7 +18,7 @@ public class Pokemon
 		private int attackPoint;
 		private int defencePoint;
 		
-		public Pokemon(String na, String nu, String t, String s1, int s1p, String s2, int s2p, String s3, int s3p, String s4, int s4p, int l, int ex, int hp, int ap, int dp )
+		public Pokemon(String na, int nu, String t, String s1, int s1p, String s2, int s2p, String s3, int s3p, String s4, int s4p, int l, int ex, int hp, int ap, int dp )
 		{
 			name = na;
 			number = nu;
@@ -129,15 +129,13 @@ public class Pokemon
 				this.name = name;
 			}
 
-		public String getNumber()
-			{
-				return number;
-			}
+		public int getNumber() {
+			return number;
+		}
 
-		public void setNumber(String number)
-			{
-				this.number = number;
-			}
+		public void setNumber(int number) {
+			this.number = number;
+		}
 
 		public String getType()
 			{
