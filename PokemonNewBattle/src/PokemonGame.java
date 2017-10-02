@@ -8,7 +8,7 @@ public class PokemonGame
 		static ArrayList<Pokemon> myPokemon = new ArrayList<Pokemon>();
 		static int powerOfSkill = 0;
 		static int powerOfSkillE = 0;
-		static int exp = myPokemon.get(0).getExperiencePoint();
+		static int exp = 100;
 		public static void main(String[] args)
 			{
 				
