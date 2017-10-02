@@ -717,6 +717,7 @@ public class PokemonGame
 						myPokemon.get(0).setLevel(myPokemon.get(0).getLevel()+1);
 						myPokemon.get(0).setAttackPoint(myPokemon.get(0).getAttackPoint()+5);
 						myPokemon.get(0).setDefencePoint(myPokemon.get(0).getDefencePoint()+2);
+						myPokemon.get(0).setExperiencePoint(myPokemon.get(0).getExperiencePoint() + 20);;
 						exp = myPokemon.get(0).getExperiencePoint();
 						
 					}
