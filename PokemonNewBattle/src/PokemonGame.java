@@ -1,5 +1,7 @@
 
+import java.sql.Time;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 import org.omg.Messaging.SyncScopeHelper;
 
@@ -30,6 +32,7 @@ public class PokemonGame
 							{	
 								checkStatus();
 							}
+						System.out.println();
 						System.out.println("do you want to keep playing?");
 						System.out.println("1. Yes   2. No");
 						String ui = userinput.nextLine();
@@ -50,9 +53,7 @@ public class PokemonGame
 						
 					}
 				
-				expAdding();
-				levelUp();
-				Evolution();
+				
 				
 				
 				
@@ -99,7 +100,7 @@ public class PokemonGame
 					{
 						System.out.println("Here is your pokemon: Bulbasaur!!!");
 						myPokemon.add(PokemonVersion.dictionary.get(0));
-						checkStatus();
+						
 						
 						
 					}
@@ -107,14 +108,14 @@ public class PokemonGame
 					{
 						System.out.println("Here is your pokemon: Charmander!!!");
 						myPokemon.add(PokemonVersion.dictionary.get(3));
-						checkStatus();
+						
 						
 					}
 				else if(chooser.equals("Squirtle")||chooser.equals("3"))
 					{
 						System.out.println("Here is your pokemon: Squirtle!!!");
 						myPokemon.add(PokemonVersion.dictionary.get(6));
-						checkStatus();
+						
 						
 					}
 				else
@@ -158,11 +159,20 @@ public class PokemonGame
 			{
 				Scanner  userinput = new Scanner(System.in);
 				String space = userinput.nextLine();
-				System.out.println("......");
-				System.out.println("......");
-				System.out.println("......");
-				System.out.println("......");
-				System.out.println("......");
+				int n = (int)((Math.random()*4)+3);
+				for(int p = 0 ; p < n ; p++)
+					{
+						try
+							{
+								Thread.sleep(200);
+							} catch (InterruptedException e)
+							{
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						System.out.print(".");
+					}
+				System.out.println();
 				int randomNumber = (int)(Math.random()*3);
 				int randomNumber1 = randomNumber*3;
 				int randomNumber2 = randomNumber*3+1;
@@ -210,6 +220,14 @@ public class PokemonGame
 
 												totalDamageToEnemy = 0;
 												wildPokemonHP = wildPokemonHP - totalDamageToEnemy;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println("OH no, you miss, so you made the " + totalDamageToEnemy + " damage");
 												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
@@ -228,6 +246,14 @@ public class PokemonGame
 												
 												totalDamageToEnemy = differenceOfAttAndDef * powerOfSkill / 10;
 												wildPokemonHP = wildPokemonHP - totalDamageToEnemy;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println("you made the " + totalDamageToEnemy + " damage");
 												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
@@ -240,6 +266,14 @@ public class PokemonGame
 
 												totalDamageToEnemy = differenceOfAttAndDef * powerOfSkill / 5;
 												wildPokemonHP = wildPokemonHP - totalDamageToEnemy;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println("Good job, that is critical, you made the " + totalDamageToEnemy + " damage");
 												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
@@ -258,8 +292,10 @@ public class PokemonGame
 								{
 									System.out.println("you win!!!");
 									System.out.println("EXP adding...");
-									expAdding();
-									
+									System.out.println();
+									levelUp();
+									Evolution();
+									System.out.println();
 									break;
 								}
 							else
@@ -270,6 +306,14 @@ public class PokemonGame
 											{
 												totalDamageToPlayer = 0;
 												myPokemonHP = myPokemonHP - totalDamageToPlayer;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println("the wild pokemon missed, so " + PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
@@ -288,6 +332,14 @@ public class PokemonGame
 												
 												totalDamageToPlayer = differenceOfDefAndAtt * powerOfSkillE / 10;
 												myPokemonHP = myPokemonHP - totalDamageToPlayer;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
@@ -298,6 +350,14 @@ public class PokemonGame
 											{
 												totalDamageToPlayer = differenceOfDefAndAtt * powerOfSkillE / 5;
 												myPokemonHP = myPokemonHP - totalDamageToPlayer;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println("Oh no, the wild pokemon made a critical, so " + PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
@@ -366,6 +426,14 @@ public class PokemonGame
 
 												totalDamageToEnemy = 0;
 												wildPokemonHP = wildPokemonHP - totalDamageToEnemy;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println("OH no, you miss, so you made the " + totalDamageToEnemy + " damage");
 												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
@@ -384,6 +452,14 @@ public class PokemonGame
 												
 												totalDamageToEnemy = differenceOfAttAndDef * powerOfSkill / 10;
 												wildPokemonHP = wildPokemonHP - totalDamageToEnemy;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println("you made the " + totalDamageToEnemy + " damage");
 												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
@@ -396,6 +472,14 @@ public class PokemonGame
 
 												totalDamageToEnemy = differenceOfAttAndDef * powerOfSkill / 5;
 												wildPokemonHP = wildPokemonHP - totalDamageToEnemy;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println("Good job, that is critical, you made the " + totalDamageToEnemy + " damage");
 												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
@@ -414,7 +498,9 @@ public class PokemonGame
 								{
 									System.out.println("you win!!!");
 									System.out.println("EXP adding...");
-									expAdding();
+									levelUp();
+									Evolution();
+									System.out.println();
 									break;
 								}
 							else
@@ -425,6 +511,14 @@ public class PokemonGame
 											{
 												totalDamageToPlayer = 0;
 												myPokemonHP = myPokemonHP - totalDamageToPlayer;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println("the wild pokemon missed, so " + PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
@@ -443,6 +537,14 @@ public class PokemonGame
 												
 												totalDamageToPlayer = differenceOfDefAndAtt * powerOfSkillE / 10;
 												myPokemonHP = myPokemonHP - totalDamageToPlayer;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
@@ -453,6 +555,14 @@ public class PokemonGame
 											{
 												totalDamageToPlayer = differenceOfDefAndAtt * powerOfSkillE / 5;
 												myPokemonHP = myPokemonHP - totalDamageToPlayer;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println("Oh no, the wild pokemon made a critical, so " + PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
@@ -518,6 +628,14 @@ public class PokemonGame
 
 												totalDamageToEnemy = 0;
 												wildPokemonHP = wildPokemonHP - totalDamageToEnemy;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println("OH no, you miss, so you made the " + totalDamageToEnemy + " damage");
 												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
@@ -536,6 +654,14 @@ public class PokemonGame
 												
 												totalDamageToEnemy = differenceOfAttAndDef * powerOfSkill / 10;
 												wildPokemonHP = wildPokemonHP - totalDamageToEnemy;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println("you made the " + totalDamageToEnemy + " damage");
 												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
@@ -548,6 +674,14 @@ public class PokemonGame
 
 												totalDamageToEnemy = differenceOfAttAndDef * powerOfSkill / 5;
 												wildPokemonHP = wildPokemonHP - totalDamageToEnemy;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println("Good job, that is critical, you made the " + totalDamageToEnemy + " damage");
 												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
@@ -566,7 +700,9 @@ public class PokemonGame
 								{
 									System.out.println("you win!!!");
 									System.out.println("EXP adding...");
-									expAdding();
+									levelUp();
+									Evolution();
+									System.out.println();
 									break;
 								}
 							else
@@ -577,6 +713,14 @@ public class PokemonGame
 											{
 												totalDamageToPlayer = 0;
 												myPokemonHP = myPokemonHP - totalDamageToPlayer;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println("the wild pokemon missed, so " + PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
@@ -595,6 +739,14 @@ public class PokemonGame
 												
 												totalDamageToPlayer = differenceOfDefAndAtt * powerOfSkillE / 10;
 												myPokemonHP = myPokemonHP - totalDamageToPlayer;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
@@ -605,6 +757,14 @@ public class PokemonGame
 											{
 												totalDamageToPlayer = differenceOfDefAndAtt * powerOfSkillE / 5;
 												myPokemonHP = myPokemonHP - totalDamageToPlayer;
+												try
+													{
+														Thread.sleep(500);
+													} catch (InterruptedException e)
+													{
+														// TODO Auto-generated catch block
+														e.printStackTrace();
+													}
 												System.out.println("Oh no, the wild pokemon made a critical, so " + PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
@@ -675,6 +835,7 @@ public class PokemonGame
 
 		private static void userChooseSkill()
 			{
+				System.out.println();
 				System.out.println("which skills you want to choose?");
 				System.out.println("1. " + myPokemon.get(0).getSkill1() + "  2. " + myPokemon.get(0).getSkill2() + "  3. " + myPokemon.get(0).getSkill3() + "  4. " + myPokemon.get(0).getSkill4());				Scanner userinput = new Scanner(System.in);
 				int userChoose = userinput.nextInt();
@@ -704,16 +865,12 @@ public class PokemonGame
 				
 			}
 
-		private static void expAdding()
-			{
-				exp = exp - (exp)/2;
-				
-			}
-
 		private static void levelUp()
 			{
+				exp -= exp;
 				if(exp==0)
 					{
+						System.out.println("level up");
 						myPokemon.get(0).setLevel(myPokemon.get(0).getLevel()+1);
 						myPokemon.get(0).setAttackPoint(myPokemon.get(0).getAttackPoint()+5);
 						myPokemon.get(0).setDefencePoint(myPokemon.get(0).getDefencePoint()+2);
@@ -730,12 +887,56 @@ public class PokemonGame
 
 		private static void Evolution()
 			{
-				if(myPokemon.get(0).getLevel()==16)
+				if(myPokemon.get(0).getLevel()==16)					
 					{
+						if(myPokemon.get(0).getName().equals(PokemonVersion.dictionary.get(0).getName()))
+							{
+								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonVersion.dictionary.get(1).getName());
+								myPokemon.remove(0);
+								myPokemon.add(PokemonVersion.dictionary.get(1));
+							}
+						else if(myPokemon.get(0).getName().equals(PokemonVersion.dictionary.get(3).getName()))
+							{
+								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonVersion.dictionary.get(4).getName());
+								myPokemon.remove(0);
+								myPokemon.add(PokemonVersion.dictionary.get(4));
+							}
+						else if(myPokemon.get(0).getName().equals(PokemonVersion.dictionary.get(6).getName()))
+							{
+								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonVersion.dictionary.get(7).getName());
+								myPokemon.remove(0);
+								myPokemon.add(PokemonVersion.dictionary.get(7));
+							}
+						else
+							{
+								
+							}
 						
 					}
 				else if(myPokemon.get(0).getLevel()==36)
 					{
+						if(myPokemon.get(0).getName().equals(PokemonVersion.dictionary.get(1).getName()))
+							{
+								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonVersion.dictionary.get(2).getName());
+								myPokemon.remove(0);
+								myPokemon.add(PokemonVersion.dictionary.get(2));
+							}
+						else if(myPokemon.get(0).getName().equals(PokemonVersion.dictionary.get(4).getName()))
+							{
+								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonVersion.dictionary.get(5).getName());
+								myPokemon.remove(0);
+								myPokemon.add(PokemonVersion.dictionary.get(5));
+							}
+						else if(myPokemon.get(0).getName().equals(PokemonVersion.dictionary.get(7).getName()))
+							{
+								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonVersion.dictionary.get(8).getName());
+								myPokemon.remove(0);
+								myPokemon.add(PokemonVersion.dictionary.get(8));
+							}
+						else
+							{
+								
+							}
 						
 					}
 				else
