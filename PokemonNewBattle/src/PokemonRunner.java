@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class PokemonVersion
+public class PokemonRunner
 	{
 		static ArrayList<Pokemon> dictionary = new ArrayList<Pokemon>();
 		public static void fillDictionary()

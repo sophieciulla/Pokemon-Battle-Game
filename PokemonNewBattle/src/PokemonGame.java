@@ -20,7 +20,7 @@ public class PokemonGame
 			}
 				private static void checkPokemon()
 				{
-				PokemonVersion.fillDictionary();
+				PokemonRunner.fillDictionary();
 				welcomeUser();
 				boolean bf = true;
 				while(bf)
@@ -93,17 +93,17 @@ public class PokemonGame
 				if(userChoice.equals("Bulbasaur")||userChoice.equals("1"))
 					{
 						System.out.println("Here is your pokemon: Bulbasaur!!!");
-						myPokemon.add(PokemonVersion.dictionary.get(0));
+						myPokemon.add(PokemonRunner.dictionary.get(0));
 					}
 				else if(userChoice.equals("Charmander")||userChoice.equals("2"))
 					{
 						System.out.println("Here is your pokemon: Charmander!!!");
-						myPokemon.add(PokemonVersion.dictionary.get(3));
+						myPokemon.add(PokemonRunner.dictionary.get(3));
 					}
 				else if(userChoice.equals("Squirtle")||userChoice.equals("3"))
 					{
 						System.out.println("Here is your pokemon: Squirtle!!!");
-						myPokemon.add(PokemonVersion.dictionary.get(6));	
+						myPokemon.add(PokemonRunner.dictionary.get(6));	
 					}
 				else
 					{
@@ -160,11 +160,11 @@ public class PokemonGame
 				int randomNumber3 = randomNumber*3+2;
 				if(myPokemon.get(0).getLevel()<17)
 					{
-						System.out.println("the wild " + PokemonVersion.dictionary.get(randomNumber1).getName() + " jumps out, time to fight");
+						System.out.println("the wild " + PokemonRunner.dictionary.get(randomNumber1).getName() + " jumps out, time to fight");
 						String space1 = userinput.nextLine();
 						int wildPokemonLevel = myPokemon.get(0).getLevel()-2;
 						System.out.println();
-						System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName());
+						System.out.println(PokemonRunner.dictionary.get(randomNumber1).getName());
 						System.out.println("level: " + wildPokemonLevel);
 					    int wildPokemonHP = myPokemon.get(0).getHealthPoint()-40;
 						System.out.println("HP: " + wildPokemonHP);
@@ -210,7 +210,7 @@ public class PokemonGame
 														e.printStackTrace();
 													}
 												System.out.println("OH no, you miss, so you made the " + totalDamageToEnemy + " damage");
-												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
+												System.out.println(PokemonRunner.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
 												break;
 												
@@ -236,7 +236,7 @@ public class PokemonGame
 														e.printStackTrace();
 													}
 												System.out.println("you made the " + totalDamageToEnemy + " damage");
-												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
+												System.out.println(PokemonRunner.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
 												break;
 												
@@ -256,7 +256,7 @@ public class PokemonGame
 														e.printStackTrace();
 													}
 												System.out.println("Good job, that is critical, you made the " + totalDamageToEnemy + " damage");
-												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
+												System.out.println(PokemonRunner.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
 												break;
 												
@@ -295,7 +295,7 @@ public class PokemonGame
 														// TODO Auto-generated catch block
 														e.printStackTrace();
 													}
-												System.out.println("the wild pokemon missed, so " + PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
+												System.out.println("the wild pokemon missed, so " + PokemonRunner.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
 												break;
@@ -321,7 +321,7 @@ public class PokemonGame
 														// TODO Auto-generated catch block
 														e.printStackTrace();
 													}
-												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
+												System.out.println(PokemonRunner.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
 												break;
@@ -339,7 +339,7 @@ public class PokemonGame
 														// TODO Auto-generated catch block
 														e.printStackTrace();
 													}
-												System.out.println("Oh no, the wild pokemon made a critical, so " + PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
+												System.out.println("Oh no, the wild pokemon made a critical, so " + PokemonRunner.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
 												break;
@@ -354,11 +354,11 @@ public class PokemonGame
 		
 				else if(myPokemon.get(0).getLevel()>17&&myPokemon.get(0).getLevel()<37)
 					{
-						System.out.println("the wild " + PokemonVersion.dictionary.get(randomNumber1).getName() + " jumps out, time to fight");
+						System.out.println("the wild " + PokemonRunner.dictionary.get(randomNumber1).getName() + " jumps out, time to fight");
 						String space1 = userinput.nextLine();
 						int wildPokemonLevel = myPokemon.get(0).getLevel()-2;
 						System.out.println();
-						System.out.println(PokemonVersion.dictionary.get(randomNumber2).getName());
+						System.out.println(PokemonRunner.dictionary.get(randomNumber2).getName());
 						System.out.println("level: " + wildPokemonLevel);
 					    int wildPokemonHP = myPokemon.get(0).getHealthPoint()-40;
 						System.out.println("HP: " + wildPokemonHP);
@@ -403,7 +403,7 @@ public class PokemonGame
 														e.printStackTrace();
 													}
 												System.out.println("OH no, you miss, so you made the " + totalDamageToEnemy + " damage");
-												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
+												System.out.println(PokemonRunner.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
 												break;
 												
@@ -429,7 +429,7 @@ public class PokemonGame
 														e.printStackTrace();
 													}
 												System.out.println("you made the " + totalDamageToEnemy + " damage");
-												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
+												System.out.println(PokemonRunner.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
 												break;
 												
@@ -449,7 +449,7 @@ public class PokemonGame
 														e.printStackTrace();
 													}
 												System.out.println("Good job, that is critical, you made the " + totalDamageToEnemy + " damage");
-												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
+												System.out.println(PokemonRunner.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
 												break;
 												
@@ -487,7 +487,7 @@ public class PokemonGame
 														// TODO Auto-generated catch block
 														e.printStackTrace();
 													}
-												System.out.println("the wild pokemon missed, so " + PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
+												System.out.println("the wild pokemon missed, so " + PokemonRunner.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
 												break;
@@ -513,7 +513,7 @@ public class PokemonGame
 														// TODO Auto-generated catch block
 														e.printStackTrace();
 													}
-												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
+												System.out.println(PokemonRunner.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
 												break;
@@ -531,7 +531,7 @@ public class PokemonGame
 														// TODO Auto-generated catch block
 														e.printStackTrace();
 													}
-												System.out.println("Oh no, the wild pokemon made a critical, so " + PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
+												System.out.println("Oh no, the wild pokemon made a critical, so " + PokemonRunner.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
 												break;
@@ -555,11 +555,11 @@ public class PokemonGame
 					}
 				else if(myPokemon.get(0).getLevel()>37)
 					{
-						System.out.println("the wild " + PokemonVersion.dictionary.get(randomNumber1).getName() + " jumps out, time to fight");
+						System.out.println("the wild " + PokemonRunner.dictionary.get(randomNumber1).getName() + " jumps out, time to fight");
 						String space1 = userinput.nextLine();
 						int wildPokemonLevel = myPokemon.get(0).getLevel()-2;
 						System.out.println();
-						System.out.println(PokemonVersion.dictionary.get(randomNumber3).getName());
+						System.out.println(PokemonRunner.dictionary.get(randomNumber3).getName());
 						System.out.println("level: " + wildPokemonLevel);
 					    int wildPokemonHP = myPokemon.get(0).getHealthPoint()-40;
 						System.out.println("HP: " + wildPokemonHP);
@@ -605,7 +605,7 @@ public class PokemonGame
 														e.printStackTrace();
 													}
 												System.out.println("OH no, you miss, so you made the " + totalDamageToEnemy + " damage");
-												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
+												System.out.println(PokemonRunner.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
 												break;
 												
@@ -631,7 +631,7 @@ public class PokemonGame
 														e.printStackTrace();
 													}
 												System.out.println("you made the " + totalDamageToEnemy + " damage");
-												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
+												System.out.println(PokemonRunner.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
 												break;
 												
@@ -651,7 +651,7 @@ public class PokemonGame
 														e.printStackTrace();
 													}
 												System.out.println("Good job, that is critical, you made the " + totalDamageToEnemy + " damage");
-												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
+												System.out.println(PokemonRunner.dictionary.get(randomNumber1).getName() + " has " + wildPokemonHP + " HP left");
 												System.out.println();
 												break;
 												
@@ -689,7 +689,7 @@ public class PokemonGame
 														// TODO Auto-generated catch block
 														e.printStackTrace();
 													}
-												System.out.println("the wild pokemon missed, so " + PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
+												System.out.println("the wild pokemon missed, so " + PokemonRunner.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
 												break;
@@ -715,7 +715,7 @@ public class PokemonGame
 														// TODO Auto-generated catch block
 														e.printStackTrace();
 													}
-												System.out.println(PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
+												System.out.println(PokemonRunner.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
 												break;
@@ -733,7 +733,7 @@ public class PokemonGame
 														// TODO Auto-generated catch block
 														e.printStackTrace();
 													}
-												System.out.println("Oh no, the wild pokemon made a critical, so " + PokemonVersion.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
+												System.out.println("Oh no, the wild pokemon made a critical, so " + PokemonRunner.dictionary.get(randomNumber1).getName() + " made " + totalDamageToPlayer + " damage to you");
 												System.out.println("your pokemon has " + myPokemonHP + " HP left");
 												System.out.println();
 												break;
@@ -783,19 +783,19 @@ public class PokemonGame
 				{
 					case 1:
 						{
-							powerOfSkillE = PokemonVersion.dictionary.get(2).getSkill1Power();
+							powerOfSkillE = PokemonRunner.dictionary.get(2).getSkill1Power();
 						}
 					case 2:
 						{
-							powerOfSkillE = PokemonVersion.dictionary.get(2).getSkill2Power();
+							powerOfSkillE = PokemonRunner.dictionary.get(2).getSkill2Power();
 						}
 					case 3:
 						{
-							powerOfSkillE = PokemonVersion.dictionary.get(2).getSkill3Power();
+							powerOfSkillE = PokemonRunner.dictionary.get(2).getSkill3Power();
 						}
 					case 4:
 						{
-							powerOfSkillE = PokemonVersion.dictionary.get(2).getSkill4Power();
+							powerOfSkillE = PokemonRunner.dictionary.get(2).getSkill4Power();
 						}
 				}
 							
@@ -857,23 +857,23 @@ public class PokemonGame
 			{
 				if(myPokemon.get(0).getLevel()==16)					
 					{
-						if(myPokemon.get(0).getName().equals(PokemonVersion.dictionary.get(0).getName()))
+						if(myPokemon.get(0).getName().equals(PokemonRunner.dictionary.get(0).getName()))
 							{
-								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonVersion.dictionary.get(1).getName());
+								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonRunner.dictionary.get(1).getName());
 								myPokemon.remove(0);
-								myPokemon.add(PokemonVersion.dictionary.get(1));
+								myPokemon.add(PokemonRunner.dictionary.get(1));
 							}
-						else if(myPokemon.get(0).getName().equals(PokemonVersion.dictionary.get(3).getName()))
+						else if(myPokemon.get(0).getName().equals(PokemonRunner.dictionary.get(3).getName()))
 							{
-								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonVersion.dictionary.get(4).getName());
+								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonRunner.dictionary.get(4).getName());
 								myPokemon.remove(0);
-								myPokemon.add(PokemonVersion.dictionary.get(4));
+								myPokemon.add(PokemonRunner.dictionary.get(4));
 							}
-						else if(myPokemon.get(0).getName().equals(PokemonVersion.dictionary.get(6).getName()))
+						else if(myPokemon.get(0).getName().equals(PokemonRunner.dictionary.get(6).getName()))
 							{
-								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonVersion.dictionary.get(7).getName());
+								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonRunner.dictionary.get(7).getName());
 								myPokemon.remove(0);
-								myPokemon.add(PokemonVersion.dictionary.get(7));
+								myPokemon.add(PokemonRunner.dictionary.get(7));
 							}
 						else
 							{
@@ -883,23 +883,23 @@ public class PokemonGame
 					}
 				else if(myPokemon.get(0).getLevel()==36)
 					{
-						if(myPokemon.get(0).getName().equals(PokemonVersion.dictionary.get(1).getName()))
+						if(myPokemon.get(0).getName().equals(PokemonRunner.dictionary.get(1).getName()))
 							{
-								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonVersion.dictionary.get(2).getName());
+								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonRunner.dictionary.get(2).getName());
 								myPokemon.remove(0);
-								myPokemon.add(PokemonVersion.dictionary.get(2));
+								myPokemon.add(PokemonRunner.dictionary.get(2));
 							}
-						else if(myPokemon.get(0).getName().equals(PokemonVersion.dictionary.get(4).getName()))
+						else if(myPokemon.get(0).getName().equals(PokemonRunner.dictionary.get(4).getName()))
 							{
-								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonVersion.dictionary.get(5).getName());
+								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonRunner.dictionary.get(5).getName());
 								myPokemon.remove(0);
-								myPokemon.add(PokemonVersion.dictionary.get(5));
+								myPokemon.add(PokemonRunner.dictionary.get(5));
 							}
-						else if(myPokemon.get(0).getName().equals(PokemonVersion.dictionary.get(7).getName()))
+						else if(myPokemon.get(0).getName().equals(PokemonRunner.dictionary.get(7).getName()))
 							{
-								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonVersion.dictionary.get(8).getName());
+								System.out.println("Congragulations!!!!! Your " + myPokemon.get(0).getName() + " evolve to " + PokemonRunner.dictionary.get(8).getName());
 								myPokemon.remove(0);
-								myPokemon.add(PokemonVersion.dictionary.get(8));
+								myPokemon.add(PokemonRunner.dictionary.get(8));
 							}
 						else
 							{
