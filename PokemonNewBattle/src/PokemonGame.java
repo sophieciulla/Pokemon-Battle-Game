@@ -12,16 +12,22 @@ public class PokemonGame
 		static int powerOfSkillE = 0;
 		static int exp = 100;
 		public static void main(String[] args)
+		//called methods in main method
 			{
-				
+			welcomeUser();
+			selectPokemon();
+			checkPokemon();
+			}
+				private static void checkPokemon()
+				{
 				PokemonVersion.fillDictionary();
-				theStart();
+				welcomeUser();
 				boolean bf = true;
 				while(bf)
 					{
 						
 						Scanner userinput = new Scanner(System.in);
-						System.out.println("do you want to check your pokemon?");
+						System.out.println("Do you want to check your pokemon?");
 						System.out.println("1. Yes   2. No");
 						String u = userinput.nextLine();
 						if(u.equals("2") || u.equals("No") || u.equals("no"))
@@ -47,28 +53,65 @@ public class PokemonGame
 						else
 							{
 								battleFight();
-								
-								
+					
 							}
-						
+					}
+				}
+				//properly ordered methods 
+		private static void welcomeUser()
+			{
+				Scanner  userinput = new Scanner(System.in);
+				System.out.println("Welcome to the Pokemon world! Press enter to begin");
+				String space1 = userinput.nextLine();
+				System.out.println("I am your helper: Pikachu!!!");
+				String space2 = userinput.nextLine();
+				System.out.println("/＼7　　　 ∠＿/");
+				System.out.println(" /　│　　 ／　／");
+				System.out.println("│　Z ＿,＜　／          /`ヽ");
+				System.out.println("│　　　　　ヽ　　          /　　〉");
+				System.out.println("Y　　　　　` |    /　　/");
+				System.out.println("ｲ●　､　●　　   |  〈　　/");
+				System.out.println("()　 v　  　()　     ＼ 〈");
+				System.out.println(">ｰ ､_　  ィ    │  ／／");
+				System.out.println(" / へ　  /　ﾉ| ＼＼");
+				System.out.println("ヽ_ﾉ　　(_／　 │／／");
+				System.out.println("7　　　　　　　|／");
+				System.out.println("　＞―r￣￣`ｰ―＿");
+				String space3 = userinput.nextLine();
+				//made gramatical corrections
+				System.out.println("Here, you will become a trainer and begin you experience in the Pokemon Battle");
+				String space4 = userinput.nextLine();
+				selectPokemon();
+			}
+		private static void selectPokemon()
+			{
+				Scanner  userinput = new Scanner(System.in);
+				System.out.println("First, you need to choose your pokemon");
+				System.out.println("1. Bulbasaur.     2. Charmander.     3. Squirtle");
+				String userChoice = userinput.nextLine();
+				
+				if(userChoice.equals("Bulbasaur")||userChoice.equals("1"))
+					{
+						System.out.println("Here is your pokemon: Bulbasaur!!!");
+						myPokemon.add(PokemonVersion.dictionary.get(0));
+					}
+				else if(userChoice.equals("Charmander")||userChoice.equals("2"))
+					{
+						System.out.println("Here is your pokemon: Charmander!!!");
+						myPokemon.add(PokemonVersion.dictionary.get(3));
+					}
+				else if(userChoice.equals("Squirtle")||userChoice.equals("3"))
+					{
+						System.out.println("Here is your pokemon: Squirtle!!!");
+						myPokemon.add(PokemonVersion.dictionary.get(6));	
+					}
+				else
+					{
+						System.out.println("Selection error, please type the number or the name");
+						selectPokemon();
 					}
 				
-				
-				
-				
-				
-				
-
 			}
-
-		
-
-	
-
-
-
-
-
 
 		private static void checkStatus()
 			{
@@ -90,70 +133,8 @@ public class PokemonGame
 				
 			}
 
-		private static void Chooser()
-			{
-				Scanner  userinput = new Scanner(System.in);
-				System.out.println("At first, you need to pick up your first pokemon");
-				System.out.println("1. Bulbasaur.     2. Charmander.     3. Squirtle");
-				String chooser = userinput.nextLine();
-				if(chooser.equals("Bulbasaur")||chooser.equals("1"))
-					{
-						System.out.println("Here is your pokemon: Bulbasaur!!!");
-						myPokemon.add(PokemonVersion.dictionary.get(0));
-						
-						
-						
-					}
-				else if(chooser.equals("Charmander")||chooser.equals("2"))
-					{
-						System.out.println("Here is your pokemon: Charmander!!!");
-						myPokemon.add(PokemonVersion.dictionary.get(3));
-						
-						
-					}
-				else if(chooser.equals("Squirtle")||chooser.equals("3"))
-					{
-						System.out.println("Here is your pokemon: Squirtle!!!");
-						myPokemon.add(PokemonVersion.dictionary.get(6));
-						
-						
-					}
-				else
-					{
-						System.out.println("pick error, please pick the number or the name");
-						Chooser();
-					}
-				
-			}
+		
 
-		private static void theStart()
-			{
-				Scanner  userinput = new Scanner(System.in);
-				System.out.println("Welcome to the Pokemon world!");
-				String space1 = userinput.nextLine();
-				System.out.println("I am your helper: Pikachu!!!");
-				String space2 = userinput.nextLine();
-				System.out.println("/＼7　　　 ∠＿/");
-				System.out.println(" /　│　　 ／　／");
-				System.out.println("│　Z ＿,＜　／          /`ヽ");
-				System.out.println("│　　　　　ヽ　　          /　　〉");
-				System.out.println("Y　　　　　` |    /　　/");
-				System.out.println("ｲ●　､　●　　   |  〈　　/");
-				System.out.println("()　 v　  　()　     ＼ 〈");
-				System.out.println(">ｰ ､_　  ィ    │  ／／");
-				System.out.println(" / へ　  /　ﾉ| ＼＼");
-				System.out.println("ヽ_ﾉ　　(_／　 │／／");
-				System.out.println("7　　　　　　　|／");
-				System.out.println("　＞―r￣￣`ｰ―＿");
-				String space3 = userinput.nextLine();
-				System.out.println("At here, you will  become a trainer, and start to experience the Pokemon Battle");
-				String space4 = userinput.nextLine();
-				Chooser();
-				
-				
-				
-				
-			}
 
 		private static void battleFight()
 			{
@@ -366,23 +347,11 @@ public class PokemonGame
 									}	
 									
 								}
-							
-								
-								
-							
-								
-							
-								
-							
-								
-							
+		
 						}
 						
 					}
-						
-						
-						
-					
+		
 				else if(myPokemon.get(0).getLevel()>17&&myPokemon.get(0).getLevel()<37)
 					{
 						System.out.println("the wild " + PokemonVersion.dictionary.get(randomNumber1).getName() + " jumps out, time to fight");
@@ -394,7 +363,6 @@ public class PokemonGame
 					    int wildPokemonHP = myPokemon.get(0).getHealthPoint()-40;
 						System.out.println("HP: " + wildPokemonHP);
 						String space2 = userinput.nextLine();
-						
 						
 						
 						int wildPokemonAttack = myPokemon.get(0).getAttackPoint()-20;
